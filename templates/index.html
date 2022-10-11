@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}" type="module"></script>
+  <script src="{{ url_for('static', filename='js/game.js') }}" type="module"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+  <title>Swapple</title>
+
+</head>
+
+
+<body>
+
+  <div id="overlay">
+    <div id="overlay-content">
+      <button type="button" id="overlay-exit">X</button>
+      <h1>How to play:</h1>
+      <h3>Get from the starting word to the target word in as few moves as possible</h3>
+      <h3>Six actions to use:</h3>
+      <h4>🔺 - Move forwards along the alphabet: A -> B</h4>
+      <h4>🔻 - Move backwards along the alphabet: Z -> Y</h4>
+      <h4>➕ - Duplicate the letter at the end: ABC -> ABCC</h4>
+      <h4>➖ - Remove the first letter: ABC -> BC</h4>
+      <h4>▶ - Shift each letter one position to the right: ABC -> CBA</h4>
+      <h4>◀ - Shift each letter one position to the left: ABC -> BCA</h4>
+    </div>
+  </div>
+
+
+  <div id="game">
+    <div id="word">
+    </div>
+
+    <button id="deleteLetter">➖</button>
+    <button id="addLetter">➕</button>
+
+    <button id="shift-left" type="button">◀</button>
+    <button id="shift-right" type="button">▶</button>
+  </div>
+
+  
+  <h4>No. of actions: <span id="action-count">0</span></h4>
+
+  <button id="undo-button" type="button">Undo</button>
+  <button id="reset-button" type="button">Reset</button>
+
+  <p>Target Word: <span id="target-word"></span></p>
+  <p>Starting Word: <span id="start-word"></span></p>
+
+  <div id="word-path">
+    <p>Moves:</p>
+  </div>
+
+</body>
+</html>
